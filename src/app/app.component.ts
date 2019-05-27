@@ -1,28 +1,33 @@
-import { Component, OnInit } from '@angular/core';
-import { Post } from './models/Post.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  AppPosts: Post[] = [];
+export class AppComponent {
 
   title = 'blog';
 
-  ngOnInit() {
-    console.log("création des posts initiaux");
-    
-    var aPost = new Post('Mon premier post', 'le contenu de mon premier post');
-    aPost.loveIts = 1; // pour qu'il soit vert
-    this.AppPosts.push(aPost);
+  posts = [
+    {
+      title: 'Mon premier post',
+      content: 'le contenu de mon premier post',
+      loveIts: 1,
+      created_at: new Date()
+    },
+    {
+      title: 'Mon deuxième post',
+      content: 'le contenu de mon 2eme post',
+      loveIts: -1,
+      created_at: new Date()
+    },
+    {
+      title: 'Encore un post',
+      content: 'le contenu de mon 3eme post',
+      loveIts: 0,
+      created_at: new Date()
+    }
+  ];
 
-    aPost = new Post('Mon deuxième post', 'le contenu de mon 2eme post')
-    aPost.loveIts = -1; // pour qu'il soit rouge
-    this.AppPosts.push(aPost);
-
-    aPost = new Post('Encore un post', 'le contenu de mon 3eme post');
-    this.AppPosts.push(aPost);
-  }
 }

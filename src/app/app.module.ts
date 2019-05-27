@@ -6,6 +6,7 @@ import { PostListComponentComponent } from './post-list-component/post-list-comp
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { PostListItemComponentComponent } from './post-list-item-component/post-list-item-component.component';
 
 const appRoutes: Routes = [
   { path: 'post', component: PostListComponentComponent },
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    PostListComponentComponent
+    PostListComponentComponent,
+    PostListItemComponentComponent
   ],
   imports: [
     BrowserModule,

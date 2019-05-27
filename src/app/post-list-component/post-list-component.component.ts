@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Post } from '../models/Post.model';
-import {AppComponent} from '../app.component';
 
 @Component({
   selector: 'app-post-list-component',
@@ -9,20 +7,10 @@ import {AppComponent} from '../app.component';
 })
 export class PostListComponentComponent implements OnInit {
 
-  posts: Post[] = [];
+  @Input() posts;
 
-  constructor(public myapp: AppComponent) { }
+  constructor() { }
 
   ngOnInit() {
-    console.log("Récupération du tableau créé dans AppComponent");
-    this.posts = this.myapp.AppPosts;
-  }
-
-  onLoveIt(id: number) {
-    this.posts[id].loveIts++;
-  }
-
-  onDontLoveIt(id: number) {
-    this.posts[id].loveIts--;
   }
 }
