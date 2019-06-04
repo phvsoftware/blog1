@@ -2,17 +2,24 @@
     'list-group-item-success' : loveIts > 0,
     'list-group-item-danger' : loveIts < 0}">
     <div class="row">
-        <h4 class="col-md-8">{{ title }}</h4>
-        <span class="col-md-4" >{{ created_at | date : 'dd/mm/y hh:mm'}}</span>
+        <div class="col-md-8">
+            <h4>{{ title }}</h4>
+        </div>
+        <div class="col-md-4">
+            <span class="float-right">{{ created_at | date : 'dd/mm/y à hh:mm'}}</span>
+        </div>
     </div>
     <div class="row">
         <p class="col-md-12">{{ content }}</p>
     </div>
 
     <div class="row">
-        <p class="col-md-6">
+        <p class="col-md-8">
             <button type="button" class="btn btn-success" (click)="onLikeIt()">I love it</button>
             <button type="button" class="btn btn-danger" style="margin-left: 5px"  (click)="onDontLikeIt()">I don't love it</button>
+        </p>
+        <p class="col-md-4">
+            <button type="button" class="btn btn-danger float-right" (click)="onDeletePost()">Supprimer post</button>
         </p>
     </div>
 </li>
